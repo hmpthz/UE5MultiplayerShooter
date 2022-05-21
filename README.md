@@ -24,6 +24,14 @@ After DVC is installed, change to project directory, and simply execute command 
 
 ![](Plugins/Resources/01-Multiplayer-System.png)
 
+✅ **Character, Game Mode, Travel**
+
+- Basic character, movement and animations
+- A Lobby game mode which counts the players in the lobby, then call seamless server travel.
+- Basic knowledge of Client-Server Model, Game Mode, Game State, Player State etc.
+
+![](Plugins/Resources/02-Character&Travel.png)
+
 
 
 
@@ -57,3 +65,4 @@ After DVC is installed, change to project directory, and simply execute command 
 - [FPS Weapon Bundle](https://www.unrealengine.com/marketplace/en-US/product/fps-weapon-bundle)
 - [Paragon: Dekker](https://www.unrealengine.com/marketplace/en-US/product/paragon-dekker)
 - [Paragon: Wraith](https://www.unrealengine.com/marketplace/en-US/product/paragon-wraith)
+- [Basic Pickups VFX Set (Niagara)](https://www.unrealengine.com/marketplace/en-US/product/basic-pickups-vfx-set-niagara)
