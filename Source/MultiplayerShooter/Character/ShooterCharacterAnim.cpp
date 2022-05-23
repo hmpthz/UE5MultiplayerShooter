@@ -1,5 +1,6 @@
 #include "ShooterCharacterAnim.h"
 #include "ShooterCharacter.h"
+#include "../Weapons/Weapon.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 

@@ -14,7 +14,7 @@ After DVC is installed, change to project directory, and simply execute command 
 
 
 
-### Features Checklist
+### Implementation Checklist
 
 ✅ **Multiplayer Subsystem Plugin**
 - Wrap it into a plugin with a Menu Widget Blueprint.
@@ -24,13 +24,17 @@ After DVC is installed, change to project directory, and simply execute command 
 
 ![](Plugins/Resources/01-Multiplayer-System.png)
 
-✅ **Character, Game Mode, Travel**
+✅ **Character, Lobby, Travel**
 
 - Basic character, movement and animations
 - A Lobby game mode which counts the players in the lobby, then call seamless server travel.
 - Basic knowledge of Client-Server Model, Game Mode, Game State, Player State etc.
 
 ![](Plugins/Resources/02-Character&Travel.png)
+
+✅ **Item Pickup, Weapon Equip, Animations**
+
+- 
 
 
 

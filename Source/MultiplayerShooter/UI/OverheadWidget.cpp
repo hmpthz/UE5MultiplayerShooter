@@ -36,6 +36,10 @@ void UOverheadWidget::ShowPlayerNetRole(APawn* InPawn)
 
 void UOverheadWidget::ShowPlayerName(APawn* InPawn)
 {
+    if (!InPawn->GetPlayerState())
+    {
+        UE_LOG(LogTemp, Error, TEXT("PlayerState NULL")); return;
+    }
     FString Name = InPawn->GetPlayerState()->GetPlayerName();
     SetDisplayText(Name);
 }

@@ -20,6 +20,7 @@ public:
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     virtual void PostInitializeComponents() override;
+
 protected:
     virtual void BeginPlay() override;
 
@@ -32,6 +33,14 @@ protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     class UWidgetComponent* OverheadWidget;
 
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+    class UCombatComponent* Combat;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+    class UItemComponent* ItemComp;
+
+#pragma region Movement
+
     void MoveForward(float Value);
     void MoveRight(float Value);
     void Turn(float Value);
@@ -40,6 +49,8 @@ protected:
     void CrouchButtonPressed();
     void SprintButtonPressed();
     void SprintButtonReleased();
+
+#pragma endregion
 
     void EquipButtonPressed();
     void AimButtonPressed();

@@ -11,9 +11,9 @@ DECLARE_MULTICAST_DELEGATE_OneParam(FMultiplayerOnJoinSessionComplete, EOnJoinSe
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnStartSessionComplete, bool, bWasSuccessful);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnDestroySessionComplete, bool, bWasSuccessful);
 
-/**
- * Functions, delegates and callbacks for managing online subsytem sessions
- */
+/*
+    Functions, delegates and callbacks for managing online subsytem sessions
+*/
 UCLASS()
 class MULTIPLAYERSYSTEM_API UMultiplayerSubsystem : public UGameInstanceSubsystem
 {

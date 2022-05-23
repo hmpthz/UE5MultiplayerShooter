@@ -6,7 +6,6 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/BoxComponent.h"
 #include "TimerManager.h"
-
 #include "Net/UnrealNetwork.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/GameplayStatics.h"
@@ -16,6 +15,8 @@
 #include "NiagaraFunctionLibrary.h"
 
 #include "ShooterCharacterAnim.h"
+#include "CombatComponent.h"
+#include "ItemComponent.h"
 
 
 AShooterCharacter::AShooterCharacter()
@@ -34,6 +35,12 @@ AShooterCharacter::AShooterCharacter()
 
     OverheadWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadWidget"));
     OverheadWidget->SetupAttachment(RootComponent);
+
+    Combat = CreateDefaultSubobject<UCombatComponent>(TEXT("Combat"));
+    Combat->SetIsReplicated(true);
+
+    ItemComp = CreateDefaultSubobject<UItemComponent>(TEXT("ItemComponent"));
+    ItemComp->SetupAttachment(RootComponent);
 
     GetCharacterMovement()->bOrientRotationToMovement = true;
     GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
