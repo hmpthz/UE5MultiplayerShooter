@@ -35,10 +35,20 @@ void AWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeP
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
 
+void AWeapon::OnWeaponStateSet()
+{
+}
+
 void AWeapon::EnableCustomDepth(bool bEnable)
 {
     if (Mesh)
     {
         Mesh->SetRenderCustomDepth(bEnable);
     }
+}
+
+void AWeapon::SetWeaponState(EWeaponState State)
+{
+    WeaponState = State;
+    OnWeaponStateSet();
 }

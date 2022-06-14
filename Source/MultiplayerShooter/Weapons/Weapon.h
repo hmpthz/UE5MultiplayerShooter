@@ -71,6 +71,8 @@ protected:
 
 #pragma endregion
 
+    void OnWeaponStateSet();
+
     /* Additional assets */
 
     UPROPERTY(EditAnywhere, Category = Assets)
@@ -102,4 +104,8 @@ public:
     /* Some getters / setters */
 
     FORCEINLINE USkeletalMeshComponent* GetMesh() const { return Mesh; }
+    void SetWeaponState(EWeaponState State);
+    FORCEINLINE EWeaponType GetWeaponType() const { return WeaponType; }
+    FORCEINLINE float GetDamage() const { return Damage; }
+    FORCEINLINE float GetHeadShotDamage() const { return HeadShotDamage; }
 };

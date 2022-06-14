@@ -38,3 +38,49 @@ void UCombatComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 }
+
+void UCombatComponent::EquipWeapon(AWeapon* ToEquip)
+{
+    if (!Character || !ToEquip) return;
+    if (CombatState != ECombatState::ECS_Unoccupied) return;
+
+    if (ToEquip->GetWeaponType() == EWeaponType::EWT_Flag)
+    {
+
+    }
+    else
+    {
+        EquipPrimaryWeapon(ToEquip);
+
+        Character->GetCharacterMovement()->bOrientRotationToMovement = false;
+        Character->bUseControllerRotationYaw = true;
+    }
+}
+
+void UCombatComponent::EquipPrimaryWeapon(AWeapon* ToEquip)
+{
+    EquippedWeapon = ToEquip;
+    EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped);
+    EquippedWeapon->SetOwner(Character);
+    EquippedWeapon->PlayPickUpEffect();
+}
+
+void UCombatComponent::EquipSecondaryWeapon(AWeapon* ToEquip)
+{
+}
+
+void UCombatComponent::OnRep_CombatState()
+{
+}
+
+void UCombatComponent::OnRep_EquippedWeapon()
+{
+}
+
+void UCombatComponent::OnRep_SecondaryWeapon()
+{
+}
+
+void UCombatComponent::AttachActorToSocket(AActor* ToAttach, FName SocketName)
+{
+}

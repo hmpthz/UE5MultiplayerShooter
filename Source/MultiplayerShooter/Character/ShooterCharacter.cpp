@@ -16,6 +16,8 @@
 
 #include "ShooterCharacterAnim.h"
 #include "CombatComponent.h"
+#include "BuffComponent.h"
+#include "LagCompensationComp.h"
 #include "ItemComponent.h"
 
 
@@ -36,8 +38,13 @@ AShooterCharacter::AShooterCharacter()
     OverheadWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadWidget"));
     OverheadWidget->SetupAttachment(RootComponent);
 
-    Combat = CreateDefaultSubobject<UCombatComponent>(TEXT("Combat"));
+    Combat = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
     Combat->SetIsReplicated(true);
+
+    Buff = CreateDefaultSubobject<UBuffComponent>(TEXT("BuffComponent"));
+    Buff->SetIsReplicated(true);
+
+    LagCompensation = CreateDefaultSubobject<ULagCompensationComp>(TEXT("LagCompensation"));
 
     ItemComp = CreateDefaultSubobject<UItemComponent>(TEXT("ItemComponent"));
     ItemComp->SetupAttachment(RootComponent);
@@ -179,6 +186,11 @@ void AShooterCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 void AShooterCharacter::PostInitializeComponents()
 {
     Super::PostInitializeComponents();
+
+    if (Combat)
+    {
+        Combat->Character = this;
+    }
 }
 
 void AShooterCharacter::MoveForward(float Value)

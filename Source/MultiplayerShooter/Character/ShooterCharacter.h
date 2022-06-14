@@ -37,6 +37,12 @@ protected:
     class UCombatComponent* Combat;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+    class UBuffComponent* Buff;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+    class ULagCompensationComp* LagCompensation;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     class UItemComponent* ItemComp;
 
 #pragma region Movement
